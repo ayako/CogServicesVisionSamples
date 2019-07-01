@@ -1,0 +1,33 @@
+﻿@page
+@model CogServicesVisionSamples_201906.Pages.CustomVisionDetectionModel
+@{
+    ViewData["Title"] = "Custom Vision - Detection";
+}
+
+<h1>Custom Vision - Detection</h1>
+@*Select image file from local folder and click "Analyze"*@
+ファイルを選択して "Analyze" をクリック
+<form method="post" enctype="multipart/form-data">
+    <div><input asp-for="ImageFile" type="file" /></div>
+    <div><input type="submit" value="Analyze" /></div>
+</form>
+
+@Model.Result
+<div>
+    @if (Model.Predictions != null)
+    {
+        @*<div>@Model.Predictions[0].TagName</div>*@
+        <table border="0">
+            @foreach (var prd in Model.Predictions)
+            {
+                <tr>
+                    <td>@prd.TagName</td>
+                    <td>: </td>
+                    <td>@Math.Round(prd.Probability, 6).ToString("0.000000")</td>
+                </tr>
+            }
+        </table>
+    }
+    <img src="@Model.ImageFileUrl" />
+</div>
+

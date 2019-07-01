@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Face API Sample - Microsoft Cognitive Services</title>
+    <link rel="stylesheet" href="css/site.css">
+    <script src="scripts/jquery-3.4.1.min.js"></script>
+    <script src="scripts/faceapi_script.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Microsoft Cognitive Services</h1>
+        <h2>Face API Sample</h2>
+        <!--画像をアップロード-->
+            <input type="file" id="imageFile" accept="image/*" />
+    </div>
+
+    <table>
+        <tr>
+            <td class="OutputTh">
+                <!--出力結果-->
+                <div id="OutputDiv">画像を選択してください</div>
+            </td>
+            <td>
+                <!--出力画像-->            
+                <div id="PhotoDiv">
+                <img id="ImageToAnalyze">
+                <img src="image/Rectangle.png" id="Rectangle">
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
