@@ -83,3 +83,31 @@ var endpoint = "https://YOUR_LOCATION.api.cognitive.microsoft.com/customvision/v
 ```
 
 CustomVision.html を開き、画像をアップロードして動作を確認できます。
+
+## Custom Vision (Model Export)
+
+### ONNX & UWP
+
+動作確認環境: Windows 10 (Build 18362.175), Windows SDK 10.0.17763, Visual Studio 2019 (v16.1)
+
+一式をローカルに保存して、Visual Studio で開き、ビルドを行います。(必要なライブラリーが読み込まれます)
+デフォルトで ONNX モデルが含まれていますので、[テスト画像](test_images/Dog) をロードして動作を確認できます。
+
+![](doc_images/onnxsample01.png)
+
+
+#### 自分で Custom Vision から作成したモデルを利用する方法
+
+Custom Vision Portal で **Compact** タイプのプロジェクトを作成します。(既存のプロジェクトを Compact に変更するには、設定画面から "Compact" に変更して再学習させます。)
+
+![](doc_images/customvision21.png)
+
+ONNX (v1.2) でモデルを Export し、ダウロードします。
+
+![](doc_images/customvision22.png)
+![](doc_images/customvision23.png)
+![](doc_images/customvision24.png)
+
+ダウンロードした ONNX モデルを **CustomVision.onnx** に名前を変更し、[Assets](samples/ONNX/Assets) フォルダーにある CustomVision.onnx と入れ替えます。
+
+再度ビルド＆デバック実行を行い、動作を確認してください。
