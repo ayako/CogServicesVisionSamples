@@ -14,6 +14,10 @@
 
 # サンプルの利用方法
 
+- Face API ([C#](#c) | [HTML/JavaScript](#htmljavascript))
+- Custom Vision ([C#](#c-1) | [HTML/JavaScript](#htmljavascript-1))
+- Custom Vision (model export) ([ONNX & UWP(C#)](#onnx--uwp))
+
 ## Face API
 
 Face API の エンドポイント(URL) と キー (Subscription Key) にご自分のサブスクリプションの情報を入力します。
