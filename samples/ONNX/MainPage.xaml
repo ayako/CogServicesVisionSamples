@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="CustomVisionONNXAppSample_201907.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CustomVisionONNXAppSample_201907"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" VerticalAlignment="Center">
+            <Image Name="UIPreviewImage"/>
+        </StackPanel>
+        <Button Grid.Row="1" HorizontalAlignment="Stretch" Height="80" Content="Load Image" FontSize="36" Click="Button_Click" />
+        <TextBlock Grid.Row="2" HorizontalAlignment="Stretch" Height="80" Name="ResultText" Text="Result" FontSize="48" TextAlignment="Center" Visibility="Collapsed"/>
+    </Grid>
+</Page>
