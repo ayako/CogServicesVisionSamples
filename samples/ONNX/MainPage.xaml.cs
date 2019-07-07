@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Windows.Graphics.Imaging;
 using Windows.Media;
@@ -68,10 +67,10 @@ namespace CustomVisionONNXAppSample_201907
                 try
                 {
                     // Get ONNX file
-                    var modelFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri($"ms-appx:///Assets/CustomVision.onnx"));
+                    var modelFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri($"ms-appx:///CustomVision.onnx"));
 
                     // Create WinML Model
-                    var model = await CustomVisionModel.CreateOnnxModel(modelFile);
+                    var model = await CustomVisionModel.CreateFromFileAsync(modelFile);
 
                     // Set image(VideoFrame)
                     var input = new CustomVisionInput

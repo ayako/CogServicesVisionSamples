@@ -155,7 +155,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\CustomVision.onnx">
+    <Content Include="CustomVision.onnx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

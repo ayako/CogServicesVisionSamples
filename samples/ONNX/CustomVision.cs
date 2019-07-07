@@ -13,6 +13,8 @@ namespace CustomVisionONNXAppSample_201907
     
     public sealed class CustomVisionInput
     {
+        //public ImageFeatureValue data; // BitmapPixelFormat: Bgra8, BitmapAlphaMode: Premultiplied, width: 224, height: 224
+        // Modified
         public VideoFrame data; // BitmapPixelFormat: Bgra8, BitmapAlphaMode: Premultiplied, width: 224, height: 224
     }
     
@@ -28,14 +30,6 @@ namespace CustomVisionONNXAppSample_201907
         private LearningModelSession session;
         private LearningModelBinding binding;
 
-        public static async Task<CustomVisionModel> CreateOnnxModel(StorageFile file)
-        {
-            CustomVisionModel learningModel = new CustomVisionModel();
-            learningModel.model = await LearningModel.LoadFromStorageFileAsync(file);
-            learningModel.session = new LearningModelSession(learningModel.model);
-            learningModel.binding = new LearningModelBinding(learningModel.session);
-            return learningModel;
-        }
         public static async Task<CustomVisionModel> CreateFromStreamAsync(IRandomAccessStreamReference stream)
         {
             CustomVisionModel learningModel = new CustomVisionModel();
@@ -53,6 +47,17 @@ namespace CustomVisionONNXAppSample_201907
             output.loss = result.Outputs["loss"] as IList<IDictionary<string,float>>;
             return output;
         }
+
+        // Added
+        public static async Task<CustomVisionModel> CreateFromFileAsync(StorageFile file)
+        {
+            CustomVisionModel learningModel = new CustomVisionModel();
+            learningModel.model = await LearningModel.LoadFromStorageFileAsync(file);
+            learningModel.session = new LearningModelSession(learningModel.model);
+            learningModel.binding = new LearningModelBinding(learningModel.session);
+            return learningModel;
+        }
+
     }
 }
 
