@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -43,12 +43,12 @@ namespace CogServicesVisionSamples_201906.Pages
         public async Task<IActionResult> OnPostAsync()
         {
             // Show image on web page
-            var imageFilePath = Path.Combine(_host.WebRootPath, "images\\uploadedImage.png");
+            var imageFilePath = Path.Combine(_host.WebRootPath, "images\\uploadedImage.jpg");
             using (var fileStream = new FileStream(imageFilePath, FileMode.OpenOrCreate))
             {
                 await ImageFile.CopyToAsync(fileStream);
             }
-            ImageFileUrl = "/images/uploadedImage.png";
+            ImageFileUrl = "/images/uploadedImage.jpg";
 
             // Post image to Custom Vision, get resut and show on web page
             var cvClient = new CustomVisionPredictionClient()
