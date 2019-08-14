@@ -43,12 +43,12 @@ namespace CogServicesVisionSamples_201906.Pages
         public async Task<IActionResult> OnPostAsync()
         {
             // Show image on web page
-            var imageFilePath = Path.Combine(_host.WebRootPath, "images\\uploadedImage.jpg");
+            var imageFilePath = Path.Combine(_host.WebRootPath, "images\\uploadedImage.png");
             using (var fileStream = new FileStream(imageFilePath, FileMode.OpenOrCreate))
             {
                 await ImageFile.CopyToAsync(fileStream);
             }
-            ImageFileUrl = "/images/uploadedImage.jpg";
+            ImageFileUrl = "/images/uploadedImage.png";
 
             // Post image to Custom Vision, get resut and show on web page
             var cvClient = new CustomVisionPredictionClient()
