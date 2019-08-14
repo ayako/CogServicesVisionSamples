@@ -126,7 +126,7 @@ Publish が完了すると **Prediction URL** が表示されるので、クリ�
     var endpoint = "ローカルに保存しておいたURL";
 ```
 
-customvision_script.js を保存し、ブラウザーで開きます。
+customvision_script.js を保存し、 CustomVision.html をブラウザーで開きます。
 
 <img src="doc_images/handson_customvision_16.png" width="600">
 
