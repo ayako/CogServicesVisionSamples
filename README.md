@@ -7,8 +7,8 @@
 
 # サンプルの動作確認
 
-- [Face API](https://codegirls201908.azurewebsites.net/FaceAPI.html)
-- [Custom Vision](https://codegirls201908.azurewebsites.net/CustomVision.html)
+- [Face API](http://cogservicesvisionsamples201906.azurewebsites.net/Face)
+- [Custom Vision](http://cogservicesvisionsamples201906.azurewebsites.net/CustomVisionClassification-Dog)
 
 ![](doc_images/CognitiveAppSampleJS.png)
 
