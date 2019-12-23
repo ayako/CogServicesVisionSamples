@@ -22,8 +22,12 @@
 
 Face API の エンドポイント(URL) と キー (Subscription Key) にご自分のサブスクリプションの情報を入力します。
 
-![](doc_images/faceapi01.png)
-![](doc_images/faceapi02.png)
+**場所(Location)** が "東日本" なら エンドポイント(URL) は "https://japaneast.api.cognitive.microsoft.com/face/v1.0" になります。
+<img src="doc_images/faceapi01.png" width="600">
+
+**Key1** に表示されている文字列が キー (Subscription Key) になります。
+<img src="doc_images/faceapi01.png" width="600">
+
 
 ### C#
 
