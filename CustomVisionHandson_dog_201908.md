@@ -129,7 +129,7 @@ customvision_script.js を保存し、ブラウザーで開きます。
 
 <img src="doc_images/handson_customvision_16.png" width="600">
 
-**[ファイルを選択]** をクリックして、[test_images\Yoga](test_images\Yoga) フォルダーにある画像をひとつ選択します。画像が識別されて犬種情報が表示されたら完了です。
+**[ファイルを選択]** をクリックして、[test_images\Dog](test_images\Dog) フォルダーにある画像をひとつ選択します。画像が識別されて犬種情報が表示されたら完了です。
 
 <img src="doc_images/handson_customvision_17d.png" width="600">
 
