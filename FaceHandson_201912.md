@@ -22,6 +22,10 @@
 - Azure サブスクリプション & Face API のサービス申込
     - Azure サブスクリプション の申し込みには マイクロソフトアカウントが必要です。
     - [Azure 無償サブスクリプション準備](https://qiita.com/annie/items/3c9ddc3fb8f120769239) の手順で、Azure サブスクリプションと Face API のサブスクリプション申込を行います(無償以外の有償アカウント等でも問題ありません)。
+    - Face API を作成した場所(ロケーション、Location) と、API Key をローカルに保存しておきます。
+
+<img src="doc_images/faceapi01.png" width="600">
+<img src="doc_images/faceapi01.png" width="600">
 
 - [CogServicesVisionSamples_201906](https://github.com/ayako/CogServicesVisionSamples_201906) のディレクトリをローカルにダウンロードしておきます。**[Clone or download]** をクリックして、ZIP でダウンロードできます。
 
