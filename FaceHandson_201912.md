@@ -25,7 +25,7 @@
     - Face API を作成した場所(ロケーション、Location) と、API Key をローカルに保存しておきます。
 
 <img src="doc_images/faceapi01.png" width="600">
-<img src="doc_images/faceapi01.png" width="600">
+<img src="doc_images/faceapi0.png" width="600">
 
 - [CogServicesVisionSamples_201906](https://github.com/ayako/CogServicesVisionSamples_201906) のディレクトリをローカルにダウンロードしておきます。**[Clone or download]** をクリックして、ZIP でダウンロードできます。
 
