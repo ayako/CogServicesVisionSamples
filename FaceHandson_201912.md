@@ -53,11 +53,11 @@ API リファレンスのページの中頃にリージョンごとの API コ�
 
 <img src="doc_images/handson_face_02.png" width="600">
 
-**Request body** には判定したい画像を指定します。今回はオンライン画像の URL、例えば [test_images\Face](test_images\Face) フォルダーにある画像のURL (https://github.com/ayako/CogServicesVisionSamples_201906/blob/master/test_images/Face/happiness.jpg) を利用して、以下のような JSON フォーマットで設定します。
+**Request body** には判定したい画像を指定します。今回はオンライン画像の URL、例えば [test_images\Face](test_images\Face) フォルダーにある画像のURL (https://raw.githubusercontent.com/ayako/CogServicesVisionSamples_201906/master/test_images/Face/happiness.jpg) を利用して、以下のような JSON フォーマットで設定します。
 
 ```
 {
-    "url": "https://github.com/ayako/CogServicesVisionSamples_201906/blob/master/test_images/Face/happiness.jpg"
+    "url": "https://raw.githubusercontent.com/ayako/CogServicesVisionSamples_201906/master/test_images/Face/happiness.jpg"
 }
 ```
 
