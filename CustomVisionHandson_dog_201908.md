@@ -59,7 +59,7 @@
 
 <img src="doc_images/handson_customvision_06d.png" width="600">
 
-これで *Beagle のタグが付いた画像がアップロードできました。**[Done]** をクリックしてダイアログを閉じます。
+これで *Beagle* のタグが付いた画像がアップロードできました。**[Done]** をクリックしてダイアログを閉じます。
 
 <img src="doc_images/handson_customvision_07d.png" width="600">
 
