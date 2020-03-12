@@ -16,10 +16,10 @@ $(function () {
         // Face API の Subscription Key と URL をセット
         // サブスクリプション画面に表示される URL および Key をコピーしてください
         var subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
-        var endpoint = "https://YOUR_LOCATION.api.cognitive.microsoft.com/face/v1.0";
+        var endpoint = "https://YOUR_ENDPOINT/";
         
         // Face API 呼び出し URL をセット
-        var webSvcUrl = endpoint + "/detect?returnFaceAttributes=emotion";       
+        var webSvcUrl = endpoint + "face/v1.0/detect?returnFaceAttributes=emotion";       
 
         // 画面に表示するメッセージをセット
         var outputDiv = $("#OutputDiv");
