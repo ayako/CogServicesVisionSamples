@@ -51,7 +51,7 @@ Visual Studio プロジェクトを開き、NuGet パッケージの復元を行
 // Face API の Subscription Key と URL をセット
 // サブスクリプション画面に表示される URL および Key をコピーしてください
 var subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
-var endpoint = "https://YOUR_LOCATION.api.cognitive.microsoft.com/face/v1.0";
+var endpoint = "https://YOUR_ENDPOINT/";
 ```
 
 FaceAPI.html を開き、画像をアップロードして動作を確認できます。
