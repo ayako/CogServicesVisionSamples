@@ -44,7 +44,7 @@ $(function () {
             // データが取得出来た場合
             if (this.readyState == 4 && this.status == 200) {
 
-                let data = JSON.parse(this.responseText)
+                let data = JSON.parse(this.responseText);
 
                 // 判別結果を取得
                 var predictions = data.predictions;
