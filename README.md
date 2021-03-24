@@ -7,16 +7,20 @@
 
 # サンプルの動作確認
 
-- [Face API](http://cogservicesvisionsamples201906.azurewebsites.net/Face)
+- [Face API (Emotion)](http://cogservicesvisionsamples201906.azurewebsites.net/Face)
+- [Face API (Mask Recognition)](http://cogservicesvisionsamples202103.azurewebsites.net/MaskRecognition)
 - [Custom Vision](http://cogservicesvisionsamples201906.azurewebsites.net/CustomVisionClassification-Dog)
+- [Form Recognizer](http://cogservicesvisionsamples202103.azurewebsites.net/FormRecognition)
 
 ![](doc_images/CognitiveAppSampleJS.png)
+![](doc_images/CognitiveAppSample202103.png)
 
 # サンプルの利用方法
 
 - Face API ([C#](#c) | [HTML/JavaScript](#htmljavascript))
 - Custom Vision ([C#](#c-1) | [HTML/JavaScript](#htmljavascript-1))
 - Custom Vision (model export) ([ONNX & UWP(C#)](#onnx--uwp))
+- Form Recognizer ([C#](#c-2))
 
 ## Face API
 
@@ -33,7 +37,9 @@ Face API の エンドポイント(URL) と キー (Subscription Key) にご自�
 
 ### C#
 
-[Face.cshtml.cs](samples/CSharp/Pages/Face.cshtml.cs)
+<!-- [Face.cshtml.cs](samples/CSharp/Pages/Face.cshtml.cs) -->
+[Face.cshtml.cs](samples/CSharp/CogServicesVisionSamples_201906/Pages/Face.cshtml.cs)
+[MaskRecognition.cshtml.cs](samples/CSharp/CogServicesVisionSamples_202103/Pages/MaskRecognition.cshtml.cs)
 
 ```Face.cshtml.cs
 // Setting for using Face API 
@@ -41,7 +47,7 @@ private const string faceSubscriptionKey = "YOUR_SUBSCRIPTION_KEY";
 private const string faceEndpoint = "https://YOUR_LOCATION.api.cognitive.microsoft.com";
 ```
 
-Visual Studio プロジェクトを開き、NuGet パッケージの復元を行います。ビルド＆起動して、localhost:<YOUR_PORT>/Face にアクセスし、画像をアップロードして動作を確認できます。
+Visual Studio プロジェクトを開き、NuGet パッケージの復元を行います。ビルド＆起動して、localhost:<YOUR_PORT>/Face (Emotion) または localhost:<YOUR_PORT>/MaskRecognition にアクセスし、画像をアップロードして動作を確認できます。
 
 ### HTML/JavaScript
 
@@ -65,8 +71,11 @@ Custom Vision のエンドポイント(URL) と キー (Prediction Key) にご�
 ![](doc_images/customvision11.png)
 ![](doc_images/customvision12.png)
 
-[CustomVisionClassification.cshtml.cs](samples/CSharp/Pages/CustomVisionClassicifation.cshtml.cs) </br>
-[CustomVisionDetection.cshtml.cs](samples/CSharp/Pages/CustomVisionDetection.cshtml.cs)
+<!-- [CustomVisionClassification.cshtml.cs](samples/CSharp/Pages/CustomVisionClassicifation.cshtml.cs) </br>
+[CustomVisionDetection.cshtml.cs](samples/CSharp/Pages/CustomVisionDetection.cshtml.cs) -->
+
+[CustomVisionClassification.cshtml.cs](samples/CSharp/CogServicesVisionSamples_201906/Pages/CustomVisionClassicifation.cshtml.cs) </br>
+[CustomVisionDetection.cshtml.cs](samples/CSharp/CogServicesVisionSamples_201906/Pages/CustomVisionDetection.cshtml.cs)
 
 ```CustomVisionClassification.cshtml.cs, CustomVisionDetection.cshtml.cs
 // Setting for using Custom Vision 
@@ -121,3 +130,37 @@ ONNX (v1.2) でモデルを Export し、ダウロードします。
 ダウンロードした ONNX モデルを **CustomVision.onnx** に名前を変更し、[Assets](samples/ONNX/Assets) フォルダーにある CustomVision.onnx と入れ替えます。
 
 再度ビルド＆デバック実行を行い、動作を確認してください。
+
+## Form Recognizer
+
+Form Recognizer の エンドポイント(Endpoint URL)、キー (Subscription Key) および モデル Id (ModelId) の箇所にご自分の情報を入力します。
+
+Azure Portal から
+
+- **エンドポイント** に表示されている文字列が エンドポイント(Endpoint URL) になります。
+- **キー1** に表示されている文字列が キー (Subscription Key) になります。
+
+<img src="doc_images/formrecognizer01.png" width="600">
+
+Form OCR Tools から
+
+- **Model ID** に表示されている文字列が モデル Id (ModelId) になります。
+
+<img src="doc_images/formrecognizer02.png" width="600">
+
+
+****
+
+### C#
+
+<!-- [FormRecognition.cshtml.cs](samples/CSharp/Pages/FormRecognition.cshtml.cs) -->
+[FormRecognition.cshtml.cs](samples/CSharp/CogServicesVisionSamples_202103/Pages/FormRecognition.cshtml.cs)
+
+```FormRecognition.cshtml.cs
+// Setting for using FormRecognizer
+private const string frKey = "YOUR_FORMRECOGNIZER_KEY";
+private const string frEndpoint = "https://YOUR_LOCATION.api.cognitive.microsoft.com/";
+private const string frModelId = "YOUR_FORMRECOGNIZER_MODELID";
+```
+
+Visual Studio プロジェクトを開き、NuGet パッケージの復元を行います。ビルド＆起動して、localhost:<YOUR_PORT>/FormRecognition にアクセスし、画像をアップロードして動作を確認できます。

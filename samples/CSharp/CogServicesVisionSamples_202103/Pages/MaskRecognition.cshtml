@@ -1,0 +1,37 @@
+﻿@page
+@model CogServicesVisionSamples_202103.Pages.MaskRecognitionModel
+@{
+    ViewData["Title"] = "Face - Mask Recognition";
+}
+
+<h1>Face - Mask Recognition</h1>
+@*Select image file from local folder and click "Analyze"*@
+ファイルを選択して "Analyze" をクリック
+<form method="post" enctype="multipart/form-data">
+    <div><input asp-for="ImageFile" type="file" /></div>
+    <div><input type="submit" value="Analyze" /></div>
+</form>
+
+<div>
+    @Model.Result
+</div>
+<div>
+    @if (Model.MaskRecognition != null)
+    {
+        <table border="0">
+            <tr>
+                <td>Mask Type</td>
+                <td>: </td>
+                <td>@Model.MaskRecognition.type</td>
+            </tr>
+            <tr>
+                <td>Nose and Mouth Covered</td>
+                <td>: </td>
+                <td>@Model.MaskRecognition.noseAndMouthCovered</td>
+            </tr>
+        </table>
+    }
+
+    <img src="@Model.ImageFileUrl" />
+
+</div>
