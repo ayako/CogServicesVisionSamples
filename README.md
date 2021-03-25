@@ -1,4 +1,4 @@
-# Microsoft Cognitive Services を利用した 画像分析アプリ (201906 版)
+# Microsoft Cognitive Services を利用した 画像分析アプリ (202103 アップデート)
 
 "人工知能 API" [Microsoft Azure Cognitive Services](https://www.microsoft.com/cognitive-services/) を使うと、画像分析を行うエンジンをノーコーディングで利用、作成できます。
 
@@ -52,6 +52,7 @@ Visual Studio プロジェクトを開き、NuGet パッケージの復元を行
 ### HTML/JavaScript
 
 [faceapi_script.js](samples/JavaScript/scripts/faceapi_script.js)
+[facemask_script.js](samples/JavaScript/scripts/facemask_script.js)
 
 ```faceapi_script.js
 // Face API の Subscription Key と URL をセット
