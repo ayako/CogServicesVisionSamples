@@ -23,7 +23,7 @@
 - Azure サブスクリプション & Custom Vision のサービス申込
     - Azure サブスクリプション の申し込みには マイクロソフトアカウントが必要です。
     - [Azure 無償サブスクリプション準備](https://qiita.com/annie/items/3c9ddc3fb8f120769239) の手順で、Azure サブスクリプション申込を行います(無償以外の有償アカウント等でも問題ありません)。
-    - [Cognitive Services サブスクリプション準備]() の手順で、Custom Vision のサービス作成を行います。
+    - [Cognitive Services サブスクリプション準備](https://github.com/ayako/AzureDXHol_AI_202001/blob/master/CogServicesHol_Subscription_202107.md) の手順で、Custom Vision のサービス作成を行います。
 
 - [CogServicesVisionSamples](https://github.com/ayako/CogServicesVisionSamples) のディレクトリをローカルにダウンロードしておきます。**[Clone or download]** をクリックして、ZIP でダウンロードできます。
 
