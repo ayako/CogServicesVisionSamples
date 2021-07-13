@@ -24,7 +24,7 @@
 - Azure サブスクリプション & Face API のサービス申込
     - Azure サブスクリプション の申し込みには マイクロソフトアカウントが必要です。
     - [Azure 無償サブスクリプション準備](https://qiita.com/annie/items/3c9ddc3fb8f120769239) の手順で、Azure サブスクリプション申込を行います(無償以外の有償アカウント等でも問題ありません)。
-    - [Cognitive Services サブスクリプション準備]() の手順で、Face API のサービス作成を行います。
+    - [Cognitive Services サブスクリプション準備](https://github.com/ayako/AzureDXHol_AI_202001/blob/master/CogServicesHol_Subscription_202107.md) の手順で、Face API のサービス作成を行います。
       - Face API のエンドポイント(Rest API アクセス URL)と、アクセスキー をローカルに保存しておきます。
 
 <img src="doc_images/handson_face_00.png" width="600">
