@@ -1,0 +1,64 @@
+﻿@page
+@model CogServicesVisionSamples_202107.Pages.FaceModel
+@{
+    ViewData["Title"] = "Face";
+}
+
+<h1>Face</h1>
+@*Select image file from local folder and click "Analyze"*@
+ファイルを選択して "Analyze" をクリック
+<form method="post" enctype="multipart/form-data">
+    <div><input asp-for="ImageFile" type="file" /></div>
+    <div><input type="submit" value="Analyze" /></div>
+</form>
+
+@Model.Result
+<div>
+    @if (Model.Emotion != null)
+    {
+        @*<div>笑顔スコア: @Model.Emotion.Happiness</div>*@
+        <table border="0">
+            <tr>
+                <td>怒り</td>
+                <td>: </td>
+                <td>@Math.Round(Model.Emotion.Anger, 6).ToString("0.000000")</td>
+            </tr>
+            <tr>
+                <td>軽蔑</td>
+                <td>: </td>
+                <td>@Math.Round(Model.Emotion.Contempt, 6).ToString("0.000000")</td>
+            </tr>
+            <tr>
+                <td>ムカつき</td>
+                <td>: </td>
+                <td>@Math.Round(Model.Emotion.Disgust, 6).ToString("0.000000")</td>
+            </tr>
+            <tr>
+                <td>恐れ</td>
+                <td>: </td>
+                <td>@Math.Round(Model.Emotion.Fear, 6).ToString("0.000000")</td>
+            </tr>
+            <tr>
+                <td>喜び</td>
+                <td>: </td>
+                <td>@Math.Round(Model.Emotion.Happiness, 6).ToString("0.000000")</td>
+            </tr>
+            <tr>
+                <td>無表情</td>
+                <td>: </td>
+                <td>@Math.Round(Model.Emotion.Neutral, 6).ToString("0.000000")</td>
+            </tr>
+            <tr>
+                <td>悲しみ</td>
+                <td>: </td>
+                <td>@Math.Round(Model.Emotion.Sadness, 6).ToString("0.000000")</td>
+            </tr>
+            <tr>
+                <td>驚き</td>
+                <td>: </td>
+                <td>@Math.Round(Model.Emotion.Surprise, 6).ToString("0.000000")</td>
+            </tr>
+        </table>
+    }
+    <img src="@Model.ImageFileUrl" />
+</div>

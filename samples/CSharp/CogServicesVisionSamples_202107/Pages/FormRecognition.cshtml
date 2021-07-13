@@ -1,0 +1,52 @@
+﻿@page
+@model CogServicesVisionSamples_202107.Pages.FormRecognitionModel
+@{
+    ViewData["Title"] = "Form Recognizer - Id Recognition";
+}
+
+<h1>Form Recognizer - Id Recognition</h1>
+@*Select image file from local folder and click "Analyze"*@
+ファイルを選択して "Analyze" をクリック
+<form method="post" enctype="multipart/form-data">
+    <div><input asp-for="ImageFile" type="file" /></div>
+    <div><input type="submit" value="Analyze" /></div>
+</form>
+
+<div>
+    @Model.Result
+</div>
+<div>
+    @if (Model.RecognizedForm != null)
+    {
+        <table border="0">
+            <tr>
+                <td>名前</td>
+                <td>: </td>
+                <td>@Model.RecognizedForm.fields.Name.valueString</td>
+            </tr>
+            <tr>
+                <td>生年月日</td>
+                <td>: </td>
+                <td>@Model.RecognizedForm.fields.Birthday.valueString</td>
+            </tr>
+            <tr>
+                <td>住所</td>
+                <td>: </td>
+                <td>@Model.RecognizedForm.fields.Address.valueString</td>
+            </tr>
+            <tr>
+                <td>免許証番号</td>
+                <td>: </td>
+                <td>@Model.RecognizedForm.fields.LicenseNo.valueString</td>
+            </tr>
+            <tr>
+                <td>有効期限</td>
+                <td>: </td>
+                <td>@Model.RecognizedForm.fields.ExpirationDate.valueString</td>
+            </tr>
+        </table>
+    }
+
+    <img src="@Model.ImageFileUrl" />
+
+</div>
