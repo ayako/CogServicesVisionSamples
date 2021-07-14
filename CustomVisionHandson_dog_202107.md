@@ -1,4 +1,4 @@
-# Microsoft Cognitive Services を利用した 画像識別アプリ 開発 (202107 版: 犬種判定(Dogs Classification))
+# Microsoft Cognitive Services を利用した 画像識別アプリ 開発 (202107 版: Custom Vision 犬種判定(Dogs Classification))
 
 "人工知能 API" [Microsoft Azure Cognitive Services](https://www.microsoft.com/cognitive-services/) や [Microsoft Azure Applied AI Services](https://azure.microsoft.com/ja-jp/product-categories/applied-ai-services/) を使うと、画像分析を行うエンジンをノーコーディングで利用、作成できます。
 
