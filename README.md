@@ -1,9 +1,10 @@
-# Microsoft Cognitive Services を利用した 画像分析アプリ (202103 アップデート)
+# Microsoft Azure Cognitive Services | Applied AI Services を利用した 画像分析アプリ (202107 アップデート)
 
-"人工知能 API" [Microsoft Azure Cognitive Services](https://www.microsoft.com/cognitive-services/) を使うと、画像分析を行うエンジンをノーコーディングで利用、作成できます。
+"人工知能 API" [Microsoft Azure Cognitive Services](https://www.microsoft.com/cognitive-services/) や [Microsoft Azure Applied AI Services](https://azure.microsoft.com/ja-jp/product-categories/applied-ai-services/) を使うと、画像分析を行うエンジンをノーコーディングで利用、作成できます。
 
 - [Face API](https://azure.microsoft.com/ja-jp/services/cognitive-services/face/) は画像から人間の顔を検出し、分析するエンジンがすぐに Web API で利用できます。
 - [Custom Vision Service](https://azure.microsoft.com/ja-jp/services/cognitive-services/custom-vision-service/) は、ご自分で用意した画像をアップロードしてタグ付け、学習させることで、画像の分類 (Classification) や 画像に写っているモノの抽出 (Object Detection) を行うエンジンを簡単に作成でき、Web API として利用できます。また TensorFlow / CoreML / ONNX、または Docker コンテナー向けに Export して利用することもできます。
+- [Form Recognizer](https://azure.microsoft.com/ja-jp/services/form-recognizer/) は帳票、IDなどの定型フォーム画像を読み取るエンジンを作成、すぐに Web API で利用できるサービスです。
 
 # サンプルの動作確認
 
@@ -20,26 +21,20 @@
 - Face API ([C#](#c) | [HTML/JavaScript](#htmljavascript))
 - Custom Vision ([C#](#c-1) | [HTML/JavaScript](#htmljavascript-1))
 - Custom Vision (model export) ([ONNX & UWP(C#)](#onnx--uwp))
-- Form Recognizer ([C#](#c-2))
+- Form Recognizer ([C#](#c-2) | [HTML/JavaScript](#htmljavascript-3)))
 
 ## Face API
 
 Face API の エンドポイント(URL) と キー (Subscription Key) にご自分のサブスクリプションの情報を入力します。
-
-**場所(Location)** が "東日本" なら エンドポイント(URL) は "https://japaneast.api.cognitive.microsoft.com/face/v1.0" になります。
-
-<img src="doc_images/faceapi01.png" width="600">
-
 **Key1** に表示されている文字列が キー (Subscription Key) になります。
 
-<img src="doc_images/faceapi01.png" width="600">
+<img src="doc_images/face01.png" width="600">
 
 
 ### C#
 
-<!-- [Face.cshtml.cs](samples/CSharp/Pages/Face.cshtml.cs) -->
-[Face.cshtml.cs](samples/CSharp/CogServicesVisionSamples_201906/Pages/Face.cshtml.cs)
-[MaskRecognition.cshtml.cs](samples/CSharp/CogServicesVisionSamples_202103/Pages/MaskRecognition.cshtml.cs)
+[Face.cshtml.cs](samples/CSharp/CogServicesVisionSamples_202107/Pages/Face.cshtml.cs)
+[MaskRecognition.cshtml.cs](samples/CSharp/CogServicesVisionSamples_202107/Pages/MaskRecognition.cshtml.cs)
 
 ```Face.cshtml.cs
 // Setting for using Face API 
@@ -71,9 +66,6 @@ Custom Vision のエンドポイント(URL) と キー (Prediction Key) にご�
 
 ![](doc_images/customvision11.png)
 ![](doc_images/customvision12.png)
-
-<!-- [CustomVisionClassification.cshtml.cs](samples/CSharp/Pages/CustomVisionClassicifation.cshtml.cs) </br>
-[CustomVisionDetection.cshtml.cs](samples/CSharp/Pages/CustomVisionDetection.cshtml.cs) -->
 
 [CustomVisionClassification.cshtml.cs](samples/CSharp/CogServicesVisionSamples_201906/Pages/CustomVisionClassicifation.cshtml.cs) </br>
 [CustomVisionDetection.cshtml.cs](samples/CSharp/CogServicesVisionSamples_201906/Pages/CustomVisionDetection.cshtml.cs)
@@ -154,8 +146,7 @@ Form OCR Tools から
 
 ### C#
 
-<!-- [FormRecognition.cshtml.cs](samples/CSharp/Pages/FormRecognition.cshtml.cs) -->
-[FormRecognition.cshtml.cs](samples/CSharp/CogServicesVisionSamples_202103/Pages/FormRecognition.cshtml.cs)
+[FormRecognition.cshtml.cs](samples/CSharp/CogServicesVisionSamples_202107/Pages/FormRecognition.cshtml.cs)
 
 ```FormRecognition.cshtml.cs
 // Setting for using FormRecognizer
@@ -165,3 +156,20 @@ private const string frModelId = "YOUR_FORMRECOGNIZER_MODELID";
 ```
 
 Visual Studio プロジェクトを開き、NuGet パッケージの復元を行います。ビルド＆起動して、localhost:<YOUR_PORT>/FormRecognition にアクセスし、画像をアップロードして動作を確認できます。
+
+### HTML/JavaScript
+
+[formrecognizer_script.js](samples/JavaScript/scripts/formrecognizer_script.js)
+
+```formrecognizer_script.js
+    // Form Recognizer の Subscription Key と URL をセット
+    // Azure Portal 画面に表示される URL および Key をコピーしてください
+    var subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
+    var endpoint = "https://YOUR_LOCATION.api.cognitive.microsoft.com/";
+    
+    // Form Recognizer の Model Id をセット
+    // FOTT ツールに表示される Model Id をコピーしてください
+    var modelId = "YOUR_MODEL_ID";
+```
+
+[FormRecognizer.html](samples/JavaScript/FormRecognizer.html) を開き、画像をアップロードして動作を確認できます。

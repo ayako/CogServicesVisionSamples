@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Form Recognizer Sample - Microsoft Azure Applied AI Services</title>
+    <link rel="stylesheet" href="css/site.css">
+    <script src="scripts/jquery-3.4.1.min.js"></script>
+    <script src="scripts/formrecognizer_script.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Microsoft Cognitive Services | Applied AI Services</h1>
+        <h2>Form Recognizer Sample</h2>
+        <!--画像をアップロード-->
+            <input type="file" id="imageFile" accept="image/*" /><br/>
+            <input type="button" id="getResult" value="結果の取得" />
+    </div>
+
+    <table>
+        <tr>
+            <td class="OutputTh">
+                <!--出力結果-->
+                <div id="OutputDiv">画像を選択してください</div>
+            </td>
+            <td>
+                <!--出力画像-->            
+                <div id="PhotoDiv">
+                <img id="ImageToAnalyze">
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

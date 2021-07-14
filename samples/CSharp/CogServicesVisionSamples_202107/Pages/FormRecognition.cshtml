@@ -19,31 +19,14 @@
     @if (Model.RecognizedForm != null)
     {
         <table border="0">
-            <tr>
-                <td>名前</td>
-                <td>: </td>
-                <td>@Model.RecognizedForm.fields.Name.valueString</td>
-            </tr>
-            <tr>
-                <td>生年月日</td>
-                <td>: </td>
-                <td>@Model.RecognizedForm.fields.Birthday.valueString</td>
-            </tr>
-            <tr>
-                <td>住所</td>
-                <td>: </td>
-                <td>@Model.RecognizedForm.fields.Address.valueString</td>
-            </tr>
-            <tr>
-                <td>免許証番号</td>
-                <td>: </td>
-                <td>@Model.RecognizedForm.fields.LicenseNo.valueString</td>
-            </tr>
-            <tr>
-                <td>有効期限</td>
-                <td>: </td>
-                <td>@Model.RecognizedForm.fields.ExpirationDate.valueString</td>
-            </tr>
+            @foreach (var key in Model.RecognizedForm.Fields.Keys)
+            {
+                <tr>
+                    <td>@key</td>
+                    <td>: </td>
+                    <td>@Model.RecognizedForm.Fields.GetValueOrDefault(key).ValueData.Text</td>
+                </tr>
+            }
         </table>
     }
 
