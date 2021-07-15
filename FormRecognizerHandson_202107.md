@@ -14,6 +14,9 @@
 1. [Form Recognizer を利用する](#Form-Recognizer-を利用する)
     - 1.1. [プリセットモデルをテストする](#プリセットモデルをテストする)
     - 1.2. [カスタムモデルを作成してテストする](#カスタムモデルを作成してテストする)
+2. [Web アプリから Form Recognizer にアクセス](#Web-アプリから-Form-Recognizer-にアクセス)
+    - [HTML&JavaScript 版](#htmljavascript-版)
+    - [C# 版](#c-版)
 
 
 ## 準備
@@ -159,6 +162,7 @@ Tag Editor の画面に遷移します。Blob コンテナーにアップロー�
 <img src="doc_images/handson_formrecognizer_23.png" width="600">
 
 しばらくして *Train Result* が表示されたら学習は完了です。
+表示される Model ID をコピーしてローカルに保存しておきます。
 
 <img src="doc_images/handson_formrecognizer_24.png" width="600">
 
@@ -170,3 +174,63 @@ Tag Editor の画面に遷移します。Blob コンテナーにアップロー�
 **[Run Analysis]** をクリックすると、学習させたカスタムモデルで分析した読み取り結果が表示されます。
 
 <img src="doc_images/handson_formrecognizer_26.png" width="600">
+
+
+## 2. Web アプリから Form Recognizer にアクセス
+
+### HTML&JavaScript 版
+
+ダウンロードしておいたコンテンツの [samples\JavaScript](samples/JavaScript) フォルダーにあるソースを編集します。
+
+[scripts\formrecognizer_script.js](samples/JavaScript/scripts/formrecognizer_script.js) をコードエディターで開きます。
+
+18~19, 23 行目の frKey と frEndpoint、frModelId の設定箇所をローカルに保存しておいた API Key と URL、Model Id で書き換えます。
+
+```formrecognizer_script.js
+// Form Recognizer の Subscription Key と URL をセット
+// Azure Portal 画面に表示される URL および Key をコピーしてください
+var subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
+var endpoint = "https://YOUR_LOCATION.api.cognitive.microsoft.com/";
+
+// Form Recognizer の Model Id をセット
+// FOTT ツールに表示される Model Id をコピーしてください
+var modelId = "YOUR_MODEL_ID";
+```
+
+formrecognizer_script.js を保存し、[FormRecognizer.html](samples/JavaScript/FormRecognizer.html) をブラウザーで開きます。
+
+**[ファイルを選択]** をクリックして、[test_images\Form](test_images/Form) フォルダーにある画像をひとつ選択します。**[Analyze]** をクリックすると読み取り結果が表示されたら完了です。
+
+<img src="doc_images/handson_formrecognizer_27.png" width="600">
+
+
+### C# 版
+
+ダウンロードしておいたコンテンツの [samples\CSharp](samples/CSharp) フォルダーにあるソースを編集します。
+
+[CogServicesVisionSamples_202107.sln](samples/CSharp/CogServicesVisionSamples_202107/CogServicesVisionSamples_202107.sln) を Visual Studio で開きます。
+
+[Pages\FormRecognition.cshtml.cs](samples/CSharp/CogServicesVisionSamples_202107/Pages/FormRecognition.cshtml.cs) をクリックして開きます。
+
+<img src="doc_images/handson_formrecognizer_28.png" width="600">
+
+26~28　行目の frKey と frEndpoint、frModelId の設定箇所をローカルに保存しておいた API Key と URL、Model Id で書き換えます。
+
+```FormRecognition.cshtml.cs
+// Setting for using FormRecognizer
+private const string frKey = "YOUR_FORMRECOGNIZER_KEY";
+private const string frEndpoint = "https://YOUR_LOCATION.api.cognitive.microsoft.com";
+private const string frModelId = "YOUR_FORMRECOGNIZER_MODELID";
+```
+
+上部バーの ▶ をクリックして、ビルド＆アプリの起動を行います。
+
+<img src="doc_images/handson_formrecognizer_29.png" width="600">
+
+ブラウザーが起動して、Web アプリの画面が表示されます。上部バーから **Form Recognizer (ID)** をクリックします。
+
+<img src="doc_images/handson_formrecognizer_30.png" width="600">
+
+*Form Recognizer* の画面で、**[ファイルを選択]** をクリックして、[test_images\Form](test_images/Form) フォルダーにある画像をひとつ選択します。**[Analyze]** をクリックすると読み取り結果が表示されたら完了です。
+
+<img src="doc_images/handson_formrecognizer_31.png" width="600">
