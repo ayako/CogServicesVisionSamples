@@ -17,6 +17,18 @@ td.OutputTh
     width: 300px;
 }
 
+td.OutputImage
+{
+    vertical-align: top;
+    width: 300px;
+}
+
+td.OutputResult
+{
+    text-align: left;
+    vertical-align: top;
+}
+
 /* 画像の表示フォーマット指定 */
 #PhotoDiv{
   position: relative;

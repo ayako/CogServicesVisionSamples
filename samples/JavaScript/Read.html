@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Computer Vision Sample (Read) - Microsoft Azure Cognitive Services</title>
+    <link rel="stylesheet" href="css/site.css">
+    <script src="scripts/jquery-3.4.1.min.js"></script>
+    <script src="scripts/read_script.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Microsoft Cognitive Services | Applied AI Services</h1>
+        <h2>Computer Vision Sample (Read) </h2>
+        <!--画像をアップロード-->
+            <input type="file" id="imageFile" accept="image/*" /><br/>
+            <input type="button" id="PostImage" value="Analyze" />
+            <input type="button" id="GetResult" value="Result" />
+            <div id="OutputMsgDiv">画像を選択してください</div>
+            <div id="ResultUrlDiv" hidden>resultUrl</div>
+    </div>
+
+    <table>
+        <tr>
+            <td class="OutputImage">
+                <!--出力画像-->            
+                <div id="PhotoDiv">
+                    <img id="ImageToAnalyze">
+                    <img src="image/Rectangle.png" id="Rectangle">
+                </div>
+            </td>
+            <td class="OutputResult">
+                <!--出力結果-->            
+                <div id="ResultDiv">
+                    <div id="OutputResultDiv"></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
