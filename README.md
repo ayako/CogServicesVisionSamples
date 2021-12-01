@@ -1,8 +1,9 @@
-# Microsoft Azure Cognitive Services | Applied AI Services を利用した 画像分析アプリ (202107 アップデート)
+# Microsoft Azure Cognitive Services | Applied AI Services を利用した 画像分析アプリ (202111 アップデート)
 
 "人工知能 API" [Microsoft Azure Cognitive Services](https://www.microsoft.com/cognitive-services/) や [Microsoft Azure Applied AI Services](https://azure.microsoft.com/ja-jp/product-categories/applied-ai-services/) を使うと、画像分析を行うエンジンをノーコーディングで利用、作成できます。
 
 - [Face API](https://azure.microsoft.com/ja-jp/services/cognitive-services/face/) は画像から人間の顔を検出し、分析するエンジンがすぐに Web API で利用できます。
+- [Computer Vision](https://azure.microsoft.com/ja-jp/services/cognitive-services/computer-vision/) は画像分析(物体検出＆分析、OCR、タグ＆キャプション付与 など) を行うエンジンを学習などの作業不要なく Web API で利用できます。
 - [Custom Vision Service](https://azure.microsoft.com/ja-jp/services/cognitive-services/custom-vision-service/) は、ご自分で用意した画像をアップロードしてタグ付け、学習させることで、画像の分類 (Classification) や 画像に写っているモノの抽出 (Object Detection) を行うエンジンを簡単に作成でき、Web API として利用できます。また TensorFlow / CoreML / ONNX、または Docker コンテナー向けに Export して利用することもできます。
 - [Form Recognizer](https://azure.microsoft.com/ja-jp/services/form-recognizer/) は帳票、IDなどの定型フォーム画像を読み取るエンジンを作成、すぐに Web API で利用できるサービスです。
 
@@ -10,16 +11,19 @@
 
 - [Face API (Emotion)](http://cogservicesvisionsamples201906.azurewebsites.net/Face)
 - [Face API (Mask Recognition)](http://cogservicesvisionsamples202103.azurewebsites.net/MaskRecognition)
+- [Computer Vision (Read)](https://cogservicesvisionsamples.z11.web.core.windows.net/Read.html)
 - [Custom Vision](http://cogservicesvisionsamples201906.azurewebsites.net/CustomVisionClassification-Dog)
 - [Form Recognizer](http://cogservicesvisionsamples202103.azurewebsites.net/FormRecognition)
 
 ![](doc_images/CognitiveAppSampleJS.png)
 ![](doc_images/CognitiveAppSample202103.png)
+![](doc_images/CognitiveAppSample202111.png)
 
 # サンプルの利用方法
 
 - Face API ([C#](#c) | [HTML/JavaScript](#htmljavascript))
-- Custom Vision ([C#](#c-1) | [HTML/JavaScript](#htmljavascript-1))
+- Computer Vision ([HTML/JavaScript](#htmljavascript-1))
+- Custom Vision ([C#](#c-1) | [HTML/JavaScript](#htmljavascript-2))
 - Custom Vision (model export) ([ONNX & UWP(C#)](#onnx--uwp))
 - Form Recognizer ([C#](#c-2) | [HTML/JavaScript](#htmljavascript-3)))
 
@@ -57,6 +61,28 @@ var endpoint = "https://YOUR_ENDPOINT/";
 ```
 
 FaceAPI.html を開き、画像をアップロードして動作を確認できます。
+
+
+## Computer Vision
+
+Computer Vision API の エンドポイント(URL) と キー (Subscription Key) にご自分のサブスクリプションの情報を入力します。
+**Key1** に表示されている文字列が キー (Subscription Key) になります。
+
+<img src="doc_images/computervision01.png" width="600">
+
+### HTML/JavaScript
+
+[read_script.js](samples/JavaScript/scripts/read_script.js)
+
+```read_script.js
+// Computer Vision API の Subscription Key と URL をセット
+// サブスクリプション画面に表示される URL および Key をコピーしてください
+var subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
+var endpoint = "https://YOUR_LOCATION.api.cognitive.microsoft.com/";
+```
+
+Read.html を開き、画像をアップロードして動作を確認できます。
+
 
 ## Custom Vision
 
