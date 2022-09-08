@@ -9,11 +9,11 @@
 
 # サンプルの動作確認
 
-- [Face API (Emotion)](http://cogservicesvisionsamples201906.azurewebsites.net/Face)
-- [Face API (Mask Recognition)](http://cogservicesvisionsamples202103.azurewebsites.net/MaskRecognition)
+- [Face API (Emotion)](https://cogservicesvisionsamples.azurewebsites.net/Face)
+- [Face API (Mask Recognition)](https://cogservicesvisionsamples.azurewebsites.net/MaskRecognition)
 - [Computer Vision (Read)](https://cogservicesvisionsamples.z11.web.core.windows.net/Read.html)
-- [Custom Vision](http://cogservicesvisionsamples201906.azurewebsites.net/CustomVisionClassification-Dog)
-- [Form Recognizer](http://cogservicesvisionsamples202103.azurewebsites.net/FormRecognition)
+- [Custom Vision (Classification)](https://cogservicesvisionsamples.azurewebsites.net/CustomVisionClassification)
+- [Form Recognizer](https://cogservicesvisionsamples.azurewebsites.net/FormRecognition)
 
 ![](doc_images/CognitiveAppSampleJS.png)
 ![](doc_images/CognitiveAppSample202103.png)
